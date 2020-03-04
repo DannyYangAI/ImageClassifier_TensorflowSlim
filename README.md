@@ -11,7 +11,7 @@
 
 4.下載 tensorflow model (https://github.com/tensorflow/models/tree/master/research/slim)，
   放入D:\Project\ImageClassifier 資料夾命名models ，此步驟做過一次即可
-  
+
 5.執行 CreateTFRcord.py , 生成訓練與測試TFRcord檔各5個
 
 6. 可載入預訓練之model, 放到 D:\Project\ImageClassifier\PreTrained    EX : http://download.tensorflow.org/models/inception_resnet_v2_2016_08_30.tar.gz
