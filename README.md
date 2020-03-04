@@ -32,6 +32,31 @@ checkpoint 的路徑錯誤：https://www.cnblogs.com/weiyinfu/p/10071955.html, w
 11.輸出結果：
     訓練得到的模型存放路徑 D:\Project\ImageClassifier\models\research\slim\train_logs
     
+    
+"""""""""""
+以下為部分參數說明：
+
+--train_dir表示訓練權重，tensorboard等信息保存的地址
+
+--dataset_dir表示轉出來的tfrecords保存的地址
+
+--dataset_name表示我們現在訓練哪個數據集，因爲不同的數據集，在解析方式上是有些微差別的
+
+--dataset_split_name表示我們現在是用pascalvoc_2007數據集的train數據還是test數據
+
+--model_name表示我們模型的名字，檢測模型是SSD，輸入是300x300，base network是VGG
+
+--checkpoint_path就是VGG pre-trained weights存放的地址
+
+--checkpoint_exclude_scopes表示這些參數不需要從checkpoint中恢復
+
+--trainable_scopes表示訓練的時候只更新這些參數的值
+"""""""""""""""""""""
+
+
+
+
+    
 
 
 
