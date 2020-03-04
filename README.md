@@ -4,7 +4,7 @@
 步驟：
 1.準備好圖片資料，依類別分類
 
-2.執行 filesToList.py，將所有圖片路徑輸出成list.txt
+2.開啟filesToList.py，修改圖片資料夾名稱與類別名稱後執行此py檔，將所有圖片路徑輸出成list.txt
 
 3.執行 CreateTrainTestDataset.py, 讀取 list.txt ，會切分資料，輸出 list_train.txt list_val.txt，記得要在程式碼中設定測試筆數
 [重要!] val的資料與train 過程沒有任何關系!!! 是用於訓練完之模組驗證用的。
@@ -12,9 +12,9 @@
 4.下載 tensorflow model (https://github.com/tensorflow/models/tree/master/research/slim)，
 放入D:\Project\ImageClassifier 資料夾命名models ，此步驟做過一次即可
 
-5.執行 CreateTFRcord.py , 生成訓練與測試TFRcord檔各5個
+5.執行 CreateTFRcord.py , 生成訓練與驗證TFRcord檔各5個
 
-6. 可載入預訓練之model, 放到 D:\Project\ImageClassifier\PreTrained    EX : http://download.tensorflow.org/models/inception_resnet_v2_2016_08_30.tar.gz
+6. 可載入預訓練之model ckpt檔, 放到 D:\Project\ImageClassifier\models\research\slim    EX : http://download.tensorflow.org/models/inception_resnet_v2_2016_08_30.tar.gz
    
 7. 於D:\Project\ImageClassifier\models\research\slim\datasets，參考flowers.py，建立 dataset_classification.py，用於讀入資料， 此步驟做過一次即可
 
@@ -24,4 +24,9 @@
 
 checkpoint 的路徑錯誤：https://www.cnblogs.com/weiyinfu/p/10071955.html, windows才會出現，可以直接放ckpt到執行目錄，就不會有錯誤
 
-10.
+10. 訓練的 執行指令
+
+
+    python train_image_classifier.py --train_dir=train_logs --dataset_dir=D:/Project/ImageClassifier/data/train --num_samples=3320 --num_classes=5 --labels_to_names_path=D:/Project/ImageClassifier/data/labels.txt --model_name=inception_resnet_v2 --checkpoint_path=inception_resnet_v2_2016_08_30.ckpt --checkpoint_exclude_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits --trainable_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits
+
+
