@@ -51,6 +51,15 @@ checkpoint 的路徑錯誤：https://www.cnblogs.com/weiyinfu/p/10071955.html, w
 --checkpoint_exclude_scopes表示這些參數不需要從checkpoint中恢復
 
 --trainable_scopes表示訓練的時候只更新這些參數的值
+
+decay :直观解释：假设给定初始学习率learning_rate为0.1，学习率衰减率为0.1，decay_steps为10000。
+则随着迭代次数从1到10000，当前的学习率decayed_learning_rate慢慢的从0.1降低为0.10.1=0.01，
+当迭代次数到20000，当前的学习率慢慢的从0.01降低为0.10.1^2=0.001，以此类推。 也就是说每10000次迭代，学习率衰减为前10000次的十分之一，该衰减是连续的，这是在staircase为False的情况下。如果staircase为True，则global_step / decay_steps始终取整数，也就是说衰减是突变的，每decay_steps次变化一次，变化曲线是阶梯状。
+
+作者：blackmanba_084b
+链接：https://www.jianshu.com/p/a5d26194d7d2
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 """""""""""""""""""""
 
 
