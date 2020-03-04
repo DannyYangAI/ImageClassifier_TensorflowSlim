@@ -29,4 +29,9 @@ checkpoint 的路徑錯誤：https://www.cnblogs.com/weiyinfu/p/10071955.html, w
 
     python train_image_classifier.py --train_dir=train_logs --dataset_dir=D:/Project/ImageClassifier/data/train --num_samples=3320 --num_classes=5 --labels_to_names_path=D:/Project/ImageClassifier/data/labels.txt --model_name=inception_resnet_v2 --checkpoint_path=inception_resnet_v2_2016_08_30.ckpt --checkpoint_exclude_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits --trainable_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits
 
+11.輸出結果：
+    訓練得到的模型存放路徑 D:\Project\ImageClassifier\models\research\slim\train_logs
+    
+
+
 
