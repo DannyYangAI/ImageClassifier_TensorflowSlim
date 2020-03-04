@@ -10,7 +10,7 @@
 [重要!] val的資料與train 過程沒有任何關系!!! 是用於訓練完之模組驗證用的。
 
 4.下載 tensorflow model (https://github.com/tensorflow/models/tree/master/research/slim)，
-  放入D:\Project\ImageClassifier 資料夾命名models ，此步驟做過一次即可
+放入D:\Project\ImageClassifier 資料夾命名models ，此步驟做過一次即可
 
 5.執行 CreateTFRcord.py , 生成訓練與測試TFRcord檔各5個
 
