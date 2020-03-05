@@ -31,7 +31,13 @@ checkpoint 的路徑錯誤：https://www.cnblogs.com/weiyinfu/p/10071955.html, w
 
 11.輸出結果：
     訓練得到的模型存放路徑 D:\Project\ImageClassifier\models\research\slim\train_logs
-    
+
+12.tensorboard：D:\Project\ImageClassifier\models\research\slim>tensorboard --logdir=train_logs/ --host localhost --port 8088
+
+瀏覽器：http://localhost:8088 
+
+13.
+
     
 """""""""""
 以下為部分參數說明：
@@ -64,6 +70,12 @@ decay :直观解释：假设给定初始学习率learning_rate为0.1，学习率
       worker_job_name: 預設為“worker”
       ps_job_name:預設為'ps'
 """""""""""""""""""""
+
+logdir指定檢查點和事件文件的存儲目錄。
+
+number_of_steps我們可以限制採取任何數字的梯度步數。在這種情況下，我們要求採取1000個步驟。
+save_summaries_secs = 300表示我們將每隔5分鐘計算摘要，
+save_interval_secs = 600表示我們將每10分鐘保存一次模型檢查點。
 
 
 
