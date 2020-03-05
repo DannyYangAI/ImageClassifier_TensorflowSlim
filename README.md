@@ -54,8 +54,7 @@ checkpoint 的路徑錯誤：https://www.cnblogs.com/weiyinfu/p/10071955.html, w
 
 10. 訓練的 執行指令
 
-
-    python train_image_classifier.py --train_dir=train_logs --dataset_dir=D:/Project/ImageClassifier/data/train --num_samples=3320 --num_classes=5 --labels_to_names_path=D:/Project/ImageClassifier/data/labels.txt --model_name=inception_resnet_v2 --checkpoint_path=inception_resnet_v2_2016_08_30.ckpt --checkpoint_exclude_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits --trainable_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits
+python train_image_classifier.py --batch_size=512 --train_dir=train_logs --dataset_dir=D:/Project/ImageClassifier/data/train --num_samples=3320 --num_classes=5 --labels_to_names_path=D:/Project/ImageClassifier/data/labels.txt --model_name=inception_resnet_v2 --checkpoint_path=inception_resnet_v2_2016_08_30.ckpt --checkpoint_exclude_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits --trainable_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits
 
 11.輸出結果：
     訓練得到的模型存放路徑 D:\Project\ImageClassifier\models\research\slim\train_logs
@@ -64,7 +63,11 @@ checkpoint 的路徑錯誤：https://www.cnblogs.com/weiyinfu/p/10071955.html, w
 
 瀏覽器：http://localhost:8088 
 
-13.
+13.驗證：修改 D:\Project\ImageClassifier\models\slim\eval_image_classifier.py ， 參考 作者lijiancheng0614 建議，此步驟做過一次即可，目的是可以讀自己提供的資料集
+
+14驗證的 執行指令
+
+python train_image_classifier.py --batch_size=512 --train_dir=train_logs --dataset_dir=D:/Project/ImageClassifier/data/train --num_samples=3320 --num_classes=5 --labels_to_names_path=D:/Project/ImageClassifier/data/labels.txt --model_name=inception_resnet_v2 --checkpoint_path=inception_resnet_v2_2016_08_30.ckpt --checkpoint_exclude_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits --trainable_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits
 
     
 """""""""""
@@ -106,11 +109,5 @@ number_of_steps我們可以限制採取任何數字的梯度步數。比如要�
 save_summaries_secs = 300表示將每隔5分鐘計算摘要
 
 save_interval_secs = 600表示將每10分鐘保存一次模型檢查點
-
-
-
-
-    
-
 
 
