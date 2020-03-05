@@ -1,3 +1,26 @@
+
+使用tf-slim 做影像辨識的優點
+1 不需重複寫code, 可任意更換下列神經網路訓練
+     
+     Inception V1-V4
+     Inception-ResNet-v2
+     ResNet V1 50 -V2 200(層)
+     VGG 16 19
+     MobileNet_v1_1.0_224 v2_1.0_224
+     NASNet-A_Mobile and Large
+     PNASNet-5_Mobile and Large
+
+2.提供預訓練模型(牽移學習)直接使用
+3.可中斷訓練後接續訓練
+4.直接提供多GPU訓練，下參數即可使用
+5.使用tf-record較有效率的輸入訓練資料格式檔
+6.提供多種影像前處理參數，如資料擴增，大量減少程式撰寫工作
+
+
+
+
+
+
 參考資料來源：https://blog.csdn.net/LiJiancheng0614/article/details/77727445  使用TensorFlow-Slim進行圖像分類: 作者lijiancheng0614 
 
 
@@ -73,9 +96,11 @@ decay :直观解释：假设给定初始学习率learning_rate为0.1，学习率
 
 logdir指定檢查點和事件文件的存儲目錄。
 
-number_of_steps我們可以限制採取任何數字的梯度步數。在這種情況下，我們要求採取1000個步驟。
-save_summaries_secs = 300表示我們將每隔5分鐘計算摘要，
-save_interval_secs = 600表示我們將每10分鐘保存一次模型檢查點。
+number_of_steps我們可以限制採取任何數字的梯度步數。比如要求上限1000個步驟。
+
+save_summaries_secs = 300表示將每隔5分鐘計算摘要
+
+save_interval_secs = 600表示將每10分鐘保存一次模型檢查點
 
 
 
