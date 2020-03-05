@@ -56,10 +56,13 @@ decay :直观解释：假设给定初始学习率learning_rate为0.1，学习率
 则随着迭代次数从1到10000，当前的学习率decayed_learning_rate慢慢的从0.1降低为0.10.1=0.01，
 当迭代次数到20000，当前的学习率慢慢的从0.01降低为0.10.1^2=0.001，以此类推。 也就是说每10000次迭代，学习率衰减为前10000次的十分之一，该衰减是连续的，这是在staircase为False的情况下。如果staircase为True，则global_step / decay_steps始终取整数，也就是说衰减是突变的，每decay_steps次变化一次，变化曲线是阶梯状。
 
-作者：blackmanba_084b
-链接：https://www.jianshu.com/p/a5d26194d7d2
-来源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+      num_clones : 每個單機部署多少個clone（即部署在多少個GPU）
+      clone_on_cpu : 如果為True，則單機中的每個clone將被放在CPU中
+      replica_id :   整數，模型所部署的單機的索引，通常是0.  
+      num_replicas: 使用多少個單機，通常為1，表示單機部署。此時`worker_device`, `num_ps_tasks`和 `ps_device`這幾個引數將被忽略。
+      num_ps_tasks: ‘ps’作業(分散式作業)使用多少個單機，如果為0表示不使用單機
+      worker_job_name: 預設為“worker”
+      ps_job_name:預設為'ps'
 """""""""""""""""""""
 
 
