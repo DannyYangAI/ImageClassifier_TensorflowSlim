@@ -41,13 +41,24 @@
 
 2.開啟filesToList.py，修改圖片資料夾名稱與類別名稱後執行此py檔，將所有圖片路徑輸出成list.txt
 
-3.執行 CreateTrainTestDataset.py, 讀取 list.txt ，會切分資料，輸出 list_train.txt list_val.txt，記得要在程式碼中設定測試筆數
+3.開啟 CreateTrainTestDataset.py，修改
+
+         _NUM_VALIDATION = 350   #測試集筆數    
+    
+完成後執行,將讀取 list.txt ，會切分資料，輸出 list_train.txt list_val.txt
 [重要!] val的資料與train 過程沒有任何關系!!! 是用於訓練完之模組驗證用的。
 
 4.下載 tensorflow model (https://github.com/tensorflow/models/tree/master/research/slim)，
 放入D:\Project\ImageClassifier 資料夾命名models ，此步驟做過一次即可
 
-5.執行 CreateTFRcord.py , 生成訓練與驗證TFRcord檔各5個
+5.開啟CreateTFRcord.py 修改下列幾項
+
+    1）倒數第一、第三行之來源影像資料夾名稱
+    2）_NUM_SHARDS=  與  channels= 填入分類數量
+    3） 'data_{:05}-of-{:05}.tfrecord'  05改成分類數量
+    4） image_data, b‘jpg‘  可能依實際狀況改成png
+
+執行 CreateTFRcord.py , 生成訓練與驗證TFRcord檔各n個（n=類別數）
 
 6. 可載入預訓練之model ckpt檔, 放到 D:\Project\ImageClassifier\models\research\slim    EX : http://download.tensorflow.org/models/inception_resnet_v2_2016_08_30.tar.gz
    
