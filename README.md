@@ -54,7 +54,7 @@
 5.開啟CreateTFRcord.py 修改下列幾項
 
     1）倒數第一、第三行之來源影像資料夾名稱
-    2）_NUM_SHARDS=  與  channels= 填入分類數量
+    2）_NUM_SHARDS=  填入分類數量
     3） 'data_{:05}-of-{:05}.tfrecord'  05改成分類數量
     4） image_data, b‘jpg‘  可能依實際狀況改成png
 
