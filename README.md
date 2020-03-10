@@ -135,7 +135,18 @@ save_interval_secs = 600表示將每10分鐘保存一次模型檢查點
 
 
 ===========訓練註記：=============================
-對於inception_resnet V2, 單張圖像愈大，GPU的使用率會對愈低
+對於inception_resnet V2, 單張圖像愈大，GPU的使用率會對愈低（與多GPU無關）
+2048X2048 ==〉 17% x 2GPU
+1024X1024 ==〉 30% x 2GPU
+300X300      ==〉 70% x 2GPU
+
+1024X1024 ==〉 50%,0%   x 2GPU batchsize X2  = 128
+1024X1024 ==〉 50%,0%   x 1 GPU batchsize X1 = 128
+
+1024X1024 ==〉 50%,50%   x 2GPU batchsize X2  = 128, threads 4調到50
+300X300      ==〉 80%  x 2GPU batchsize X2  = 128, threads 4調到50
+
+
 
 
 
