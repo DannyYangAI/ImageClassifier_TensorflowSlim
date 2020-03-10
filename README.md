@@ -70,13 +70,13 @@
 
 checkpoint 的路徑錯誤：https://www.cnblogs.com/weiyinfu/p/10071955.html, windows才會出現，可以直接放ckpt到執行目錄，就不會有錯誤
 
-10. 訓練的 執行指令
+10. 訓練的 執行指令 （記得設定筆數、類別數）
 
 (windows版本指令)
-    python train_image_classifier.py --batch_size=512 --train_dir=train_logs --dataset_dir=D:/Project/ImageClassifier/data/train --num_samples=3320 --num_classes=5 --labels_to_names_path=D:/Project/ImageClassifier/data/labels.txt --model_name=inception_resnet_v2 --checkpoint_path=inception_resnet_v2_2016_08_30.ckpt --checkpoint_exclude_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits --trainable_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits
+    python train_image_classifier.py --batch_size=512  --num_samples=4407 --num_classes=2 --train_dir=train_logs --dataset_dir=D:/Project/ImageClassifier/data/train --num_samples=3320 --num_classes=5 --labels_to_names_path=D:/Project/ImageClassifier/data/labels.txt --model_name=inception_resnet_v2 --checkpoint_path=inception_resnet_v2_2016_08_30.ckpt --checkpoint_exclude_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits --trainable_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits
 
 （linux版本指令）    
-    python train_image_classifier.py     --batch_size=512     --train_dir=train_logs     --dataset_dir=../../../data/train     --model_name=inception_resnet_v2     --checkpoint_path=inception_resnet_v2_2016_08_30.ckpt     --checkpoint_exclude_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits     --trainable_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits     --max_number_of_steps=2000000
+    python train_image_classifier.py     --batch_size=512     --num_samples=4407 --num_classes=2  --train_dir=train_logs     --dataset_dir=../../../data/train     --model_name=inception_resnet_v2     --checkpoint_path=inception_resnet_v2_2016_08_30.ckpt     --checkpoint_exclude_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits     --trainable_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits     --max_number_of_steps=2000000
 
 
 11.輸出結果：
@@ -90,7 +90,7 @@ checkpoint 的路徑錯誤：https://www.cnblogs.com/weiyinfu/p/10071955.html, w
 
 14驗證的 執行指令
 
-python train_image_classifier.py --batch_size=512 --train_dir=train_logs --dataset_dir=D:/Project/ImageClassifier/data/train --num_samples=3320 --num_classes=5 --labels_to_names_path=D:/Project/ImageClassifier/data/labels.txt --model_name=inception_resnet_v2 --checkpoint_path=inception_resnet_v2_2016_08_30.ckpt --checkpoint_exclude_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits --trainable_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits
+python train_image_classifier.py --batch_size=512 --num_samples=500 --num_classes=2  --train_dir=train_logs --dataset_dir=D:/Project/ImageClassifier/data/train --num_samples=3320 --num_classes=5 --labels_to_names_path=D:/Project/ImageClassifier/data/labels.txt --model_name=inception_resnet_v2 --checkpoint_path=inception_resnet_v2_2016_08_30.ckpt --checkpoint_exclude_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits --trainable_scopes=InceptionResnetV2/Logits,InceptionResnetV2/AuxLogits
 
     
 """""""""""
